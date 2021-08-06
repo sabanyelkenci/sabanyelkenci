@@ -1,0 +1,73 @@
+body {
+    background-color: white;
+  }
+  
+  .home-page {
+    background-image: url("https://www.saturdayeveningpost.com/wp-content/uploads/satevepost/2019-04-19-planet-earth.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .home-page-txt {
+    text-align: right;
+    
+    padding-right: 150px;
+    padding-top: 200px;
+    color: black;
+    letter-spacing: 5px;
+  }
+  
+  .header {
+    font-style: normal;
+    text-align: center;
+    padding: 0px;
+    font-size: 8vw;
+    margin: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: inline-block;
+    color: black;
+    line-height: 24px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 19px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: rgb(240, 190, 79);
+  }
+  
+  li a.active {
+    color: black;
+    background-color: rgb(240, 190, 79);
+  }
+  
+  li a :visited {
+    color: blue;
+  }
+  
+  
+  .about-me {
+    text-align: center;
+    
+  }
+  
