@@ -1,8 +1,33 @@
 .body {
   height: 50vh;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.result {
+  margin: auto;
+  align-items: center;
+  width: 800px;
+  height: 500px;
+  background-color: lightgrey;
+}
+
+.title {
+  font-size: x-large;
+  color: black;
+}
+
+.btn {
+  margin: auto;
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

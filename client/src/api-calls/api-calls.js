@@ -7,32 +7,26 @@
  *
  * @throws {Error} HTTP error! status: {number}.
  */
+import { data } from "../../data/data.js";
 
- const origin = 'https://api.github.com/'
+const origin = "https://api.github.com";
 
- export const gitHubProfil =async (...params)=>{
+export const fetchData = async () => {
+  // declare resource's URL
 
-    //declare resource's URL
+  // const paramPaths = params.join("/");
+  // const URL = `${origin}/${paramPaths}`;
+  // fetch, validate and parse  the API data
 
-    const paramPaths = params.join("/");
-    const URL = `${origin}+${paramPaths}`;
-    console.log(URL);
+  // const encodedURL = encodeURI(URL);
+  const response = await fetch('https://api.github.com/users/sabanyelkenci/repos');
 
-    // fetch, validate and parse  the API data 
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status} \n -> ${URL}`);
+  }
 
-    const encodedURL = encodeURI(URL);
-    const response = await fetch(encodedURL);
+  data.data = await response.json();
+  // return the final data
 
-    if(!response.ok){
-
-        throw new Error(`HTTP error! status: ${response.status} \n -> ${URL}`);
-    }
-
-    const data = await response.json();
-    // return the final data
-
-    return data;
-    
- };
-
-
+  return data;
+};
