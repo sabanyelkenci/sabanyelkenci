@@ -10,8 +10,8 @@
 .result {
   margin: auto;
   align-items: center;
-  width: 800px;
-  height: 500px;
+  /* width: 800px;
+  height: 1200px; */
   background-color: lightgrey;
 }
 
@@ -21,13 +21,20 @@
 }
 
 .btn {
-  margin: auto;
-  background-color: black; /* Green */
+  margin-top: 0px;
+  /* margin: auto; */
+  background-color: green; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 16px;
+}
+
+.result{
+  background-color: lightgray;
+  height: 100%;
+  width: 100%;
 }

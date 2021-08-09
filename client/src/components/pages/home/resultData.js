@@ -1,13 +1,12 @@
+
+
 export const resultData = () => {
-  const resultDiv = document.createElement("div");
-  resultDiv.className = "result";
-  resultDiv.id = "result";
-
-  document.getElementById("root").appendChild(resultDiv);
-
+  const container = document.createElement("div");
+  container.id = "resultData";
+  container.className = "resultData";
   const title = document.createElement("h2");
   title.className = "title";
-  title.innerHTML = "GitHub Profile Information";
-  resultDiv.appendChild(title);
-  return resultDiv;
+  title.innerHTML = "My GitHub Repos";
+  container.appendChild(title);
+  return container;
 };

@@ -1,3 +1,4 @@
+import { state } from "../../data/data.js";
 export const showRepoData = async () => {
   const response = await fetch(
     "https://api.github.com/users/zehrayelkenci/repos"
@@ -8,17 +9,15 @@ export const showRepoData = async () => {
   }
 
   const data = await response.json();
+  data.state=data;
   // return the final data
-  console.log(typeof data);
-  console.log(data);
+  console.log(typeof data.state);
+  console.log(data.state);
 
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.state.length; i++) {
     const repom = document.createElement("p");
-    repom.innerHTML = data[i].name;
-    document.getElementById("result").appendChild(repom);
+    repom.innerHTML = data.state[i].name;
+    const list = document.getElementById("resultData");
+    list.appendChild(repom);
   }
 };
-
-// //.forEach(([key, value]) => {
-//     div.appendChild(document.createElement(key.full_name));
-//   });

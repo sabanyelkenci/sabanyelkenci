@@ -1,3 +1,3 @@
-export const data = {
-  data: {},
+export const state = {
+  data: [],
 };
