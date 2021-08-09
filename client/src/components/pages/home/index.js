@@ -1,7 +1,6 @@
 import { resultData } from "./resultData.js";
 import { button } from "./button.js";
 
-
 /**
  * The home page.
  *
@@ -12,8 +11,8 @@ export const home = () => {
   container.className = "body";
 
   // container.appendChild(inputGreeting());
-  container.appendChild(resultData());
   container.appendChild(button("MyRepos"));
+  container.appendChild(resultData());
 
   return container;
 };
