@@ -22,6 +22,7 @@
 
 .btn {
   margin-top: 0px;
+  width: 300px;
   /* margin: auto; */
   background-color: green; /* Green */
   border: none;
