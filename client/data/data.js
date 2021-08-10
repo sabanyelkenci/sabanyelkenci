@@ -1,3 +1,4 @@
 export const state = {
-  data: [],
+  repos: [],
+  profile: [],
 };

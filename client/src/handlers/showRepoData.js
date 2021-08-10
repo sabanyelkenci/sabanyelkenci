@@ -1,10 +1,14 @@
 import { state } from "../../data/data.js";
 
-// const clear =()={
-
-// };
+export const reset = () => {
+  const list = document.getElementById("resultData");
+  if (list) {
+    list.innerHTML = "";
+  }
+};
 
 export const showRepoData = async () => {
+  reset();
   const response = await fetch(
     "https://api.github.com/users/zehrayelkenci/repos"
   );
@@ -14,17 +18,17 @@ export const showRepoData = async () => {
   }
 
   const data = await response.json();
-  state.data = data;
-  // data.state = data;
-  // return the final data
-  console.log(typeof data.state);
-  console.log(state.data);
+  state.repos = data;
 
-  for (let i = 0; i < state.data.length; i++) {
+  console.log(typeof data.state);
+  console.log(state.repos);
+
+  for (let i = 0; i < state.repos.length; i++) {
     const repom = document.createElement("p");
-    repom.innerHTML = state.data[i].name;
+    repom.innerHTML = state.repos[i].name;
     const list = document.getElementById("resultData");
     list.appendChild(repom);
-    // list.insertBefore(repom, list.childNodes[0]);
   }
+
+  // container.append(document.getElementById("resultData"));
 };
