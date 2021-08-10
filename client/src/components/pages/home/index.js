@@ -16,7 +16,7 @@ export const home = () => {
   container.appendChild(button("MyProfile", showProfile));
   container.appendChild(button("MyRepos", showRepoData));
   container.appendChild(button("Reset", reset));
-  container.appendChild(resultData("My GitHub Repos"));
+  container.appendChild(resultData("My GitHub Information"));
 
   return container;
 };
