@@ -4,13 +4,14 @@ export const reset = () => {
   const list = document.getElementById("resultData");
   if (list) {
     list.innerHTML = "";
+    list.innerHTML = "<h1>My Repos</h1>";
   }
 };
 
 export const showRepoData = async () => {
   reset();
   const response = await fetch(
-    "https://api.github.com/users/zehrayelkenci/repos"
+    "https://api.github.com/users/sabanyelkenci/repos"
   );
 
   if (!response.ok) {

@@ -2,6 +2,7 @@ import { resultData } from "./resultData.js";
 import { button } from "./button.js";
 import { showRepoData } from "../../../handlers/showRepoData.js";
 import { showProfile } from "../../../handlers/showProfile.js";
+import { showIssues } from "../../../handlers/showIssues.js";
 import { reset } from "../../../handlers/reset.js";
 /**
  * The home page.
@@ -15,6 +16,7 @@ export const home = () => {
   // container.appendChild(inputGreeting());
   container.appendChild(button("MyProfile", showProfile));
   container.appendChild(button("MyRepos", showRepoData));
+  container.appendChild(button("MyIssues", showIssues));
   container.appendChild(button("Reset", reset));
   container.appendChild(resultData("My GitHub Information"));
 

@@ -3,7 +3,8 @@ import { state } from "../../data/data.js";
 export const showProfile = async () => {
   const list = document.getElementById("resultData");
   list.innerHTML = "";
-  const response = await fetch("https://api.github.com/users/zehrayelkenci");
+  list.innerHTML = "<h1>My Profile</h1>";
+  const response = await fetch("https://api.github.com/users/sabanyelkenci");
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status} \n -> ${URL}`);
