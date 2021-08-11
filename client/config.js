@@ -1,3 +1,3 @@
 export const config = {
-  repoName: 'javascript-quiz',
+  repoName: 'sabanyelkenci/starter-github-api-home-page-quiz',
 };
