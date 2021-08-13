@@ -1,11 +1,11 @@
 // import { inputGreeting } from '../../shared/input-greeting.js';
 // 
 /**
- * The questions page.
+ * The about page.
  *
  * @returns {HTMLDivElement} A rendered questions page.
  */
-export const questions = () => {
+export const about = () => {
   const container = document.createElement('div');
   container.className = 'body';
 

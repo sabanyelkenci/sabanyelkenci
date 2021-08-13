@@ -1,7 +1,25 @@
 .navbar {
   display: flex;
+  float: right;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
+.navbar-linkDiv {
+
+
+  width: 100px;
+  /* margin: auto; */
+  /* background-color: lightgray; */
+  border: none;
+  color: white;
+
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 16px;
+  text-align: center;
+  
+}
 

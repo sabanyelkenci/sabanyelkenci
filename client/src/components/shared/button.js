@@ -1,4 +1,4 @@
-import { showRepoData } from "../../../handlers/showRepoData.js";
+import { showRepoData } from "../../handlers/showRepoData.js";
 
 export const button = (text, event) => {
   const btn = document.createElement("button");

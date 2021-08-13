@@ -28,26 +28,26 @@ import {
   getCurrentEnvURL,
   accumulateHooks,
   extractHashFromURL,
-} from './utils.js';
-import Q from './Q.js';
-import setLocationPath from './middlewares/setLocationPath.js';
-import matchPathToRegisteredRoutes from './middlewares/matchPathToRegisteredRoutes.js';
-import checkForDeprecationMethods from './middlewares/checkForDeprecationMethods.js';
-import checkForForceOp from './middlewares/checkForForceOp.js';
-import updateBrowserURL from './middlewares/updateBrowserURL.js';
-import processMatches from './middlewares/processMatches.js';
-import waitingList from './middlewares/waitingList.js';
-import { notFoundLifeCycle } from './lifecycles.js';
-var DEFAULT_LINK_SELECTOR = '[data-navigo]';
+} from "./utils.js";
+import Q from "./Q.js";
+import setLocationPath from "./middlewares/setLocationPath.js";
+import matchPathToRegisteredRoutes from "./middlewares/matchPathToRegisteredRoutes.js";
+import checkForDeprecationMethods from "./middlewares/checkForDeprecationMethods.js";
+import checkForForceOp from "./middlewares/checkForForceOp.js";
+import updateBrowserURL from "./middlewares/updateBrowserURL.js";
+import processMatches from "./middlewares/processMatches.js";
+import waitingList from "./middlewares/waitingList.js";
+import { notFoundLifeCycle } from "./lifecycles.js";
+var DEFAULT_LINK_SELECTOR = "[data-navigo]";
 export default function Navigo(appRoute, options) {
   var DEFAULT_RESOLVE_OPTIONS = options || {
-    strategy: 'ONE',
+    strategy: "ONE",
     hash: false,
     noMatchWarning: false,
     linksSelector: DEFAULT_LINK_SELECTOR,
   };
   var self = this;
-  var root = '/';
+  var root = "/";
   var current = null;
   var routes = [];
   var destroyed = false;
@@ -64,11 +64,11 @@ export default function Navigo(appRoute, options) {
   }
 
   function _checkForAHash(url) {
-    if (url.indexOf('#') >= 0) {
+    if (url.indexOf("#") >= 0) {
       if (DEFAULT_RESOLVE_OPTIONS.hash === true) {
-        url = url.split('#')[1] || '/';
+        url = url.split("#")[1] || "/";
       } else {
-        url = url.split('#')[0];
+        url = url.split("#")[0];
       }
     }
 
@@ -76,7 +76,7 @@ export default function Navigo(appRoute, options) {
   }
 
   function composePathWithRoot(path) {
-    return clean(root + '/' + clean(path));
+    return clean(root + "/" + clean(path));
   }
 
   function createRoute(path, handler, hooks, name) {
@@ -92,9 +92,9 @@ export default function Navigo(appRoute, options) {
   function on(path, handler, hooks) {
     var _this = this;
 
-    if (typeof path === 'object' && !(path instanceof RegExp)) {
+    if (typeof path === "object" && !(path instanceof RegExp)) {
       Object.keys(path).forEach(function (p) {
-        if (typeof path[p] === 'function') {
+        if (typeof path[p] === "function") {
           _this.on(p, path[p]);
         } else {
           var _path$p = path[p],
@@ -105,7 +105,7 @@ export default function Navigo(appRoute, options) {
         }
       });
       return this;
-    } else if (typeof path === 'function') {
+    } else if (typeof path === "function") {
       hooks = handler;
       handler = path;
       path = root;
@@ -126,7 +126,7 @@ export default function Navigo(appRoute, options) {
       self.__dirty = true;
     }
 
-    to = to ? clean(root) + '/' + clean(to) : undefined; // console.log("-- resolve --> " + to, self.__dirty);
+    to = to ? clean(root) + "/" + clean(to) : undefined; // console.log("-- resolve --> " + to, self.__dirty);
 
     var context = {
       instance: self,
@@ -139,7 +139,7 @@ export default function Navigo(appRoute, options) {
       [
         setLocationPath,
         matchPathToRegisteredRoutes,
-        Q['if'](
+        Q["if"](
           function (_ref) {
             var matches = _ref.matches;
             return matches && matches.length > 0;
@@ -166,7 +166,7 @@ export default function Navigo(appRoute, options) {
       self.__dirty = true;
     }
 
-    to = clean(root) + '/' + clean(to);
+    to = clean(root) + "/" + clean(to);
     var context = {
       instance: self,
       to: to,
@@ -182,7 +182,7 @@ export default function Navigo(appRoute, options) {
         checkForDeprecationMethods,
         checkForForceOp,
         matchPathToRegisteredRoutes,
-        Q['if'](
+        Q["if"](
           function (_ref2) {
             var matches = _ref2.matches;
             return matches && matches.length > 0;
@@ -202,7 +202,7 @@ export default function Navigo(appRoute, options) {
     var url = generate(name, data);
 
     if (url !== null) {
-      navigate(url.replace(new RegExp('^/?' + root), ''), options);
+      navigate(url.replace(new RegExp("^/?" + root), ""), options);
       return true;
     }
 
@@ -230,7 +230,7 @@ export default function Navigo(appRoute, options) {
         }
       };
 
-      window.addEventListener('popstate', this.__popstateListener);
+      window.addEventListener("popstate", this.__popstateListener);
     }
   }
 
@@ -238,7 +238,7 @@ export default function Navigo(appRoute, options) {
     this.routes = routes = [];
 
     if (isPushStateAvailable) {
-      window.removeEventListener('popstate', this.__popstateListener);
+      window.removeEventListener("popstate", this.__popstateListener);
     }
 
     this.destroyed = destroyed = true;
@@ -246,10 +246,10 @@ export default function Navigo(appRoute, options) {
 
   function notFound(handler, hooks) {
     self._notFoundRoute = createRoute(
-      '*',
+      "*",
       handler,
       [genericHooks, hooks],
-      '__NOT_FOUND__'
+      "__NOT_FOUND__"
     );
     return this;
   }
@@ -258,11 +258,11 @@ export default function Navigo(appRoute, options) {
     if (!isWindowAvailable) return;
     findLinks().forEach(function (link) {
       if (
-        'false' === link.getAttribute('data-navigo') ||
-        '_blank' === link.getAttribute('target')
+        "false" === link.getAttribute("data-navigo") ||
+        "_blank" === link.getAttribute("target")
       ) {
         if (link.hasListenerAttached) {
-          link.removeEventListener('click', link.navigoHandler);
+          link.removeEventListener("click", link.navigoHandler);
         }
 
         return;
@@ -274,18 +274,18 @@ export default function Navigo(appRoute, options) {
         link.navigoHandler = function (e) {
           if (
             (e.ctrlKey || e.metaKey) &&
-            e.target.tagName.toLowerCase() === 'a'
+            e.target.tagName.toLowerCase() === "a"
           ) {
             return false;
           }
 
-          var location = link.getAttribute('href');
+          var location = link.getAttribute("href");
 
-          if (typeof location === 'undefined' || location === null) {
+          if (typeof location === "undefined" || location === null) {
             return false;
           } // handling absolute paths
 
-          if (location.match(/^(http|https)/) && typeof URL !== 'undefined') {
+          if (location.match(/^(http|https)/) && typeof URL !== "undefined") {
             try {
               var u = new URL(location);
               location = u.pathname + u.search;
@@ -293,7 +293,7 @@ export default function Navigo(appRoute, options) {
           }
 
           var options = parseNavigateOptions(
-            link.getAttribute('data-navigo-options')
+            link.getAttribute("data-navigo-options")
           );
 
           if (!destroyed) {
@@ -303,7 +303,7 @@ export default function Navigo(appRoute, options) {
           }
         };
 
-        link.addEventListener('click', link.navigoHandler);
+        link.addEventListener("click", link.navigoHandler);
       }
     });
     return self;
@@ -322,7 +322,7 @@ export default function Navigo(appRoute, options) {
   }
 
   function link(path) {
-    return '/' + root + '/' + clean(path);
+    return "/" + root + "/" + clean(path);
   }
 
   function setGenericHooks(hooks) {
@@ -345,22 +345,22 @@ export default function Navigo(appRoute, options) {
 
       if (data) {
         for (var key in data) {
-          result = result.replace(':' + key, data[key]);
+          result = result.replace(":" + key, data[key]);
         }
       }
 
-      result = !result.match(/^\//) ? '/' + result : result;
+      result = !result.match(/^\//) ? "/" + result : result;
     }
 
     if (result && options && !options.includeRoot) {
-      result = result.replace(new RegExp('^/' + root), '');
+      result = result.replace(new RegExp("^/" + root), "");
     }
 
     return result;
   }
 
   function getLinkPath(link) {
-    return link.getAttribute('href');
+    return link.getAttribute("href");
   }
 
   function pathToMatchObject(path) {
@@ -368,7 +368,7 @@ export default function Navigo(appRoute, options) {
       url = _extractGETParameters[0],
       queryString = _extractGETParameters[1];
 
-    var params = queryString === '' ? null : parseQuery(queryString);
+    var params = queryString === "" ? null : parseQuery(queryString);
     var hashString = extractHashFromURL(path);
     var route = createRoute(url, function () {}, [genericHooks], url);
     return {
@@ -383,7 +383,7 @@ export default function Navigo(appRoute, options) {
 
   function getCurrentLocation() {
     return pathToMatchObject(
-      clean(getCurrentEnvURL(root)).replace(new RegExp('^' + root), '')
+      clean(getCurrentEnvURL(root)).replace(new RegExp("^" + root), "")
     );
   }
 
@@ -405,8 +405,8 @@ export default function Navigo(appRoute, options) {
     annotatePathWithRoot
   ) {
     if (
-      typeof currentLocation !== 'undefined' &&
-      (typeof annotatePathWithRoot === 'undefined' || annotatePathWithRoot)
+      typeof currentLocation !== "undefined" &&
+      (typeof annotatePathWithRoot === "undefined" || annotatePathWithRoot)
     ) {
       currentLocation = composePathWithRoot(currentLocation);
     }
@@ -418,9 +418,9 @@ export default function Navigo(appRoute, options) {
     };
     setLocationPath(context, function () {});
 
-    if (typeof path === 'string') {
+    if (typeof path === "string") {
       path =
-        typeof annotatePathWithRoot === 'undefined' || annotatePathWithRoot
+        typeof annotatePathWithRoot === "undefined" || annotatePathWithRoot
           ? composePathWithRoot(path)
           : path;
     }
@@ -435,7 +435,7 @@ export default function Navigo(appRoute, options) {
   }
 
   function addHook(type, route, func) {
-    if (typeof route === 'string') {
+    if (typeof route === "string") {
       route = getRoute(route);
     }
 
@@ -455,7 +455,7 @@ export default function Navigo(appRoute, options) {
   }
 
   function getRoute(nameOrHandler) {
-    if (typeof nameOrHandler === 'string') {
+    if (typeof nameOrHandler === "string") {
       return routes.find(function (r) {
         return r.name === composePathWithRoot(nameOrHandler);
       });
@@ -503,10 +503,10 @@ export default function Navigo(appRoute, options) {
   this.match = directMatchWithRegisteredRoutes;
   this.matchLocation = directMatchWithLocation;
   this.getCurrentLocation = getCurrentLocation;
-  this.addBeforeHook = addHook.bind(this, 'before');
-  this.addAfterHook = addHook.bind(this, 'after');
-  this.addAlreadyHook = addHook.bind(this, 'already');
-  this.addLeaveHook = addHook.bind(this, 'leave');
+  this.addBeforeHook = addHook.bind(this, "before");
+  this.addAfterHook = addHook.bind(this, "after");
+  this.addAlreadyHook = addHook.bind(this, "already");
+  this.addLeaveHook = addHook.bind(this, "leave");
   this.getRoute = getRoute;
   this._pathToMatchObject = pathToMatchObject;
   this._clean = clean;

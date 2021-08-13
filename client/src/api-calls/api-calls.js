@@ -7,7 +7,7 @@
  *
  * @throws {Error} HTTP error! status: {number}.
  */
-import { data } from "../../data/data.js";
+// import { data } from "../../data/data.js";
 
 const origin = "https://api.github.com";
 

@@ -9,11 +9,14 @@ export const navbar = (routes) => {
   container.className = "navbar";
 
   for (const route of routes) {
+    const navDiv = document.createElement("div");
+    navDiv.className = "navbar-linkDiv";
     const anchor = document.createElement("a");
     anchor.innerHTML = route.name;
     anchor.href = route.path;
     anchor.setAttribute("data-navigo", "");
-    container.appendChild(anchor);
+    container.append(navDiv);
+    navDiv.append(anchor);
   }
 
   return container;

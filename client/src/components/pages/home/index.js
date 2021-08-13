@@ -1,24 +1,15 @@
-import { resultData } from "./resultData.js";
-import { button } from "./button.js";
-import { showRepoData } from "../../../handlers/showRepoData.js";
-import { showProfile } from "../../../handlers/showProfile.js";
-import { showIssues } from "../../../handlers/showIssues.js";
-import { reset } from "../../../handlers/reset.js";
+// import { inputGreeting } from '../../shared/input-greeting.js';
+
 /**
- * The home page.
+ * The gitHub page.
  *
- * @returns {HTMLDivElement} A rendered home page.
+ * @returns {HTMLDivElement} A rendered quiz page.
  */
 export const home = () => {
   const container = document.createElement("div");
   container.className = "body";
 
   // container.appendChild(inputGreeting());
-  container.appendChild(button("MyProfile", showProfile));
-  container.appendChild(button("MyRepos", showRepoData));
-  container.appendChild(button("MyIssues", showIssues));
-  container.appendChild(button("Reset", reset));
-  container.appendChild(resultData("My GitHub Information"));
 
   return container;
 };
