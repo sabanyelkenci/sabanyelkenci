@@ -1,5 +1,29 @@
 .bottom {
+  margin-top: 60px;
+  padding-top: 20px;
   position: fixed;
+  width: 100%;
+  height: 60px;
+  display: block;
   left: 0;
   bottom: 0;
+  background-color: lightgray;
+  color: black;
+  display: block;
 }
+.footer-text {
+  margin-left: 20px;
+  display: inline-block;
+  /* float: left; */
+}
+.footer-items {
+  background-color: darkgray;
+  margin-right: 20px;
+  display: inline-block;
+  float: right;
+}
+
+.aLink {
+  margin-left:20px;
+}
+

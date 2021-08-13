@@ -16,7 +16,7 @@ export const navbar = (routes) => {
   div1.className = "div1";
 
   // eslint-disable-next-line spellcheck/spell-checker
-  div1.innerHTML = `Saban Yelkenci`;
+  div1.innerHTML = `Saban Yelkenci `;
 
   const div2 = document.createElement("div");
   div2.className = "div2";
