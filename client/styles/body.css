@@ -20,23 +20,30 @@
   font-size: x-large;
   color: black;
 }
-
+/* 
 .btn {
   margin-top: 0px;
   width: 200px;
   /* margin: auto; */
-  background-color: green; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+  /* background-color: green; /* Green */
+  /* border: none; */
+  /* color: white; */
+  /* padding: 15px 32px; */
+  /* text-align: center; */
+  /* text-decoration: none; */
   /* display: inline-block; */
-  font-size: 16px;
-}
+  /* font-size: 16px; */
+/* } */ 
 
 .result{
   background-color: lightgray;
   height: 100%;
   width: 100%;
+}
+
+.infoDiv {
+
+  width: auto;
+  height: auto;
+  background-color: lightgray;
 }

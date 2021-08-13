@@ -16,11 +16,14 @@ export const myGithub = () => {
   container.className = "body";
 
   // container.appendChild(inputGreeting());
+
   container.appendChild(button("MyProfile", showProfile));
   container.appendChild(button("MyRepos", showRepoData));
   container.appendChild(button("MyIssues", showIssues));
   container.appendChild(button("Reset", reset));
   container.appendChild(resultData("My GitHub Information"));
+
+
 
   return container;
 };
