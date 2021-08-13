@@ -1,7 +1,6 @@
 import { page } from "./components/layout/page.js";
 
 import { home } from "./components/pages/home/index.js";
-import { about } from "./components/pages/about/index.js";
 import { skills } from "./components/pages/skills/index.js";
 import { myGithub } from "./components/pages/gitHub/index.js";
 import { myProject } from "./components/pages/myProject/index.js";
@@ -53,13 +52,9 @@ const routeHandler =
     path: `/`,
     callback: routeHandler(home),
   },
+
   {
-    name: "About",
-    path: `/about`,
-    callback: routeHandler(about),
-  },
-  {
-    name: "Skills",
+    name: "MySkills",
     path: `/skills`,
     callback: routeHandler(skills),
   },
