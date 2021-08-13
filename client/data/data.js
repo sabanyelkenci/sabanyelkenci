@@ -3,6 +3,6 @@ export const state = {
   profile: {},
   issues: { items: [] },
   fetchData: {
-    avatar_url: undefined,
+    avatar_url: "",
   },
 };

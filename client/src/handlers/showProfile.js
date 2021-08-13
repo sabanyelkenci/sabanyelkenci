@@ -12,9 +12,11 @@ export const showProfile = async () => {
 
   const data = await response.json();
   state.profile = data;
+  state.fetchData.avatar_url = data.avatar_url;
+  console.log(state.fetchData.avatar_url);
 
-  console.log(typeof state.profile);
-  console.log(state.profile);
+  // console.log(typeof state.profile);
+  // console.log(state.profile);
 
   for (const key in state.profile) {
     if (Object.hasOwnProperty.call(state.profile, key)) {

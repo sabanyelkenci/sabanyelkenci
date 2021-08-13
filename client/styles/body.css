@@ -47,3 +47,11 @@
   height: auto;
   background-color: lightgray;
 }
+
+.homeImg {
+
+width: 300px;
+height: 300px;
+border-radius: 200px;
+
+}
