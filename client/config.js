@@ -1,3 +1,3 @@
 export const config = {
-  repoName: "sabanyelkenci",
+  repoName: "syelkenci-profile-page",
 };
