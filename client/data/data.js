@@ -27,4 +27,22 @@ export const state = {
       alt: "Git Logo",
     },
   ],
+
+  otherSkills: [
+    "Business Analysis",
+    "Scrum",
+    "Business Process Improvement",
+    "Project Portfolio Management",
+    "Project Management",
+    "Ms Project",
+    "Document Management",
+    "Jira",
+    "Figma",
+    "Visio",
+    "TFS",
+    "SPSS",
+    "Microsoft Test Management",
+    "Balsamiq Mockups",
+    "Confluence",
+  ],
 };

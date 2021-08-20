@@ -27,3 +27,18 @@ export const mySkills = () => {
 
   return skillsSection;
 };
+
+export const myOtherSkills = () => {
+  const container = document.createElement("div");
+  container.id = "skills2";
+  container.className = "skills2";
+
+  state.otherSkills.forEach((element) => {
+    const div = document.createElement("div");
+    div.className = "skills-Item-2";
+    div.id = "other-skills";
+    div.innerHTML = element;
+    container.appendChild(div);
+  });
+  return container;
+};
