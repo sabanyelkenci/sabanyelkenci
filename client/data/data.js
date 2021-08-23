@@ -36,6 +36,7 @@ export const state = {
     "Project Management",
     "Ms Project",
     "Document Management",
+    "Ms SQL",
     "Jira",
     "Figma",
     "Visio",

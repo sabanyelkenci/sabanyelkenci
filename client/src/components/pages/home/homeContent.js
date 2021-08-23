@@ -9,6 +9,7 @@ export const homePage = (title, imgURL, content) => {
   homeContent.innerHTML = content;
   homeContent.style.fontFamily = `Courier New`;
   homeContent.style.fontSize = `18px`;
+
   const homeImg = document.createElement("img");
   homeImg.className = "homeImg";
   homeImg.src = imgURL;

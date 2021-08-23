@@ -11,7 +11,7 @@ import { footer } from "./footer.js";
  */
 export const page = (bodyComponent, routes) => {
   const container = document.createElement("div");
-  container.id="container";
+  container.id = "container";
 
   container.appendChild(navbar(routes));
   if (typeof bodyComponent === "function") {

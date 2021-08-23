@@ -3,7 +3,7 @@ import { page } from "./components/layout/page.js";
 import { home } from "./components/pages/home/index.js";
 import { skills } from "./components/pages/skills/index.js";
 import { myGithub } from "./components/pages/gitHub/index.js";
-import { myProject } from "./components/pages/myProject/index.js";
+import { myProjects } from "./components/pages/projects/index.js";
 
 /**
  * Defines the route URLs, names and callbacks.
@@ -65,7 +65,7 @@ const routeHandler =
   },
   {
     name: "MyProjects",
-    path: `/myProjects`,
-    callback: routeHandler(myProject),
+    path: `/projects`,
+    callback: routeHandler(myProjects),
   },
 ].forEach((route) => routes.push(route));
