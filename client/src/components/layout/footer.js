@@ -12,10 +12,9 @@ export const footer = () => {
   div1.innerHTML = "Copyright © 2020 | Saban Yelkenci";
 
   const div2 = document.createElement("div");
-  div2.className = "footer-items";
+  div2.id = "footer-items";
 
   const a1 = document.createElement("a");
-
 
   const link1 = document.createTextNode("MyGitHub");
   a1.appendChild(link1);
@@ -23,7 +22,7 @@ export const footer = () => {
   a1.title = "MyGitHub";
   a1.href = "https://github.com/sabanyelkenci";
   a1.target = "_blank";
-  
+
   const a2 = document.createElement("a");
   a2.className = "aLink";
   const link2 = document.createTextNode("MyTwitter");
@@ -33,7 +32,7 @@ export const footer = () => {
   a2.target = "_blank";
 
   const a3 = document.createElement("a");
-  a3.className = "aLink";
+
   const link3 = document.createTextNode("MyLinkedIn");
   a3.appendChild(link3);
   a3.title = "Twitter";

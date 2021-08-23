@@ -30,7 +30,7 @@
   float: right;
 }
 
-.div3 {
+/* #menu {
   border: none;
   width: auto;
   color: white;
@@ -43,20 +43,25 @@
   padding: 10px 15px;
   margin: 10px;
   background-color:black;
+} */
+  
+#menu {
+  left: 20px;
 }
 
-a:link,
-a:visited {
-  /* background-color: black; */
+#menu a:link, 
+#menu a:visited {
+  background-color: black;
   color: white;
-
+  padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
 }
 
-a:hover,
-a:active {
-  /* background-color: white; */
-  color:white; 
+#menu a:hover {
+  background-color: gray;
+} 
+#menu a:active {
+  background-color: black;
 }

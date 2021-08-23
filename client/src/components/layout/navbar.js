@@ -27,7 +27,9 @@ export const navbar = (routes) => {
 
   for (const route of routes) {
     const div3 = document.createElement("div");
+    div3.id = "menu";
     div3.className = "div3";
+
     const anchor = document.createElement("a");
     anchor.innerHTML = route.name;
     anchor.href = route.path;

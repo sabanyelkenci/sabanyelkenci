@@ -1,4 +1,4 @@
-// import { state } from "../../../../data/data.js";
+import { state } from "../../../../data/data.js";
 import { fetchRepos } from "../../../api-calls/api-calls.js";
 
 export const githubProjects = document.createElement("section");
@@ -18,9 +18,11 @@ mainContainer.appendChild(projectList);
 
 export const myGitHubProjects = async () => {
   try {
-    const response = await fetchRepos();
+    state.repos = await fetchRepos();
+    const response = state.repos;
+
     console.log(response);
-    
+
     response.forEach((element) => {
       const pCard = document.createElement("div");
       pCard.className = "pCard";
@@ -30,9 +32,10 @@ export const myGitHubProjects = async () => {
       const info = document.createElement("div");
       info.className = "info";
       const dateCreated = new Date(element.created_at);
-      info.innerHTML = `<span class='name'>${
-        element.name
-      }</span> <span class='date'>${dateCreated.toLocaleDateString()}</span>`;
+      const name = document.createElement("span");
+      name.innerHTML = `<a href = "${element.html_url}" target ="_blank"> ${element.name} </a>`;
+      info.innerHTML = `<span class='date'>${dateCreated.toLocaleDateString()}</span>`;
+      info.appendChild(name);
 
       const description = document.createElement("div");
       description.className = "description";

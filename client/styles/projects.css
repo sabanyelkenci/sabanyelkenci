@@ -54,8 +54,8 @@
 }
 
 
-.link,
-.code {
+
+#code {
   padding: 1em;
   background-color: black;
 }
@@ -63,3 +63,4 @@
 .description {
   grid-area: description;
 }
+
