@@ -1,8 +1,8 @@
 .skills {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   grid-template-rows: auto auto;
-  grid-template-areas: "header header header header";
+  grid-template-areas: "header header header header header";
   grid-gap: 50px;
   padding: 10px;
   justify-content: center;
@@ -12,6 +12,8 @@
 .skills-Item {
   border: 1px solid black;
   flex-wrap: wrap;
+  height: 100%;
+  /* margin-bottom: 10px; */
 }
 
 .skills-Item-2 {
@@ -42,13 +44,14 @@
 
 .skills2 {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto ;
+  grid-template-columns: auto auto auto auto auto auto auto auto ;
   grid-template-rows: auto auto;
-  grid-template-areas: "header header header header header header ";
+  grid-template-areas: "header header header header header header header header ";
   grid-gap: 50px;
-  padding: 40px;
-  width: 100%;
+  /* padding: 40px; */
+  width: auto ;
 
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }

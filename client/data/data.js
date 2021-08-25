@@ -20,6 +20,11 @@ export const state = {
       path: "client/public/javascript-logo.svg",
       alt: "JavaScript Logo",
     },
+    {
+      type: "NodeJS",
+      path: "client/public/node.png",
+      alt: "NodeJs Logo",
+    },
 
     {
       type: "git",

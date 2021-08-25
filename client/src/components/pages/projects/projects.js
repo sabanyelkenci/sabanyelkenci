@@ -4,7 +4,7 @@ import { fetchRepos } from "../../../api-calls/api-calls.js";
 export const githubProjects = document.createElement("section");
 githubProjects.className = "project-section";
 const titleEl = document.createElement("h2");
-titleEl.innerHTML = "My Projects";
+titleEl.innerHTML = "My GitHub Projects";
 titleEl.className = "p-h2";
 githubProjects.appendChild(titleEl);
 

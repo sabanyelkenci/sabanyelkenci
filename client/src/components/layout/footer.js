@@ -1,7 +1,5 @@
 /**
- * The shared footer.
- *
- * @returns {HTMLDivElement} A rendered footer element.
+ * @returns {HTMLDivElement}
  */
 export const footer = () => {
   const container = document.createElement("div");

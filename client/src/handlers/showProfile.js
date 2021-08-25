@@ -16,11 +16,11 @@ export const showProfile = async () => {
   const myP = document.createElement("p");
   // debugger;
   myP.innerHTML = `
-      <span style="color:blue">My user name is :</span> ${state.profile.login} <br>
-      <span style="color:blue">My blog is :</span> ${state.profile.blog} <br>
-      <span style="color:blue">Number of my public repos :</span> ${state.profile.public_repos} <br>
-      <span style="color:blue">My followers :</span> ${state.profile.followers} <br>
-      <span style="color:blue">My fallowing :</span> ${state.profile.following} <br>
+      <span style="color:blue">My user name is :</span> ${state.profile.login} <br> <br>
+      <span style="color:blue">My blog is :</span> ${state.profile.blog} <br><br>
+      <span style="color:blue">Number of my public repos :</span> ${state.profile.public_repos} <br><br>
+      <span style="color:blue">My followers :</span> ${state.profile.followers} <br><br>
+      <span style="color:blue">My fallowing :</span> ${state.profile.following} 
   `;
   list.appendChild(myP);
 
